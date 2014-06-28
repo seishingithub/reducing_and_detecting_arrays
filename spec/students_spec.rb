@@ -3,10 +3,21 @@ require 'spec_helper'
 require './lib/students'
 
 describe Students do
-  students = Students.new
+
 
   it 'can return all students' do
-    pending
+    students = Students.new
+
+    input =     [
+      {name: "Peggy", age: 46},
+      {name: "Fred", age: 51},
+      {name: "Sarah", age: 34},
+      {name: "Lisa", age: 51},
+      {name: "Ian", age: 19},
+    ]
+
+    expect(input).to eq students.all
+
   end
 
   it 'can calculate the average age of the class' do
