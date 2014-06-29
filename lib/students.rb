@@ -1,3 +1,4 @@
+
 class Students
 
 
@@ -9,5 +10,13 @@ class Students
       {name: "Lisa", age: 51},
       {name: "Ian", age: 19},
     ]
+  end
+
+  def average_age
+    all_ages = 0
+    all.select do |student|
+      all_ages += student[:age]
+    end
+    all_ages / all.length
   end
 end

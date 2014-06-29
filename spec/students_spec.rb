@@ -1,3 +1,4 @@
+
 require 'spec_helper'
 
 require './lib/students'
@@ -21,7 +22,8 @@ describe Students do
   end
 
   it 'can calculate the average age of the class' do
-    pending
+    students = Students.new
+    expect(students.average_age).to eq 40
       end
 
   it 'can return a string of student names' do
