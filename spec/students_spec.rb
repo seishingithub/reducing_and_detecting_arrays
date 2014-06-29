@@ -27,7 +27,8 @@ describe Students do
       end
 
   it 'can return a string of student names' do
-    pending
+    students = Students.new
+    expect(students.string_of_names).to eq "Peggy Fred Sarah Lisa Ian"
   end
 
   it 'can find a student older than a certain age' do

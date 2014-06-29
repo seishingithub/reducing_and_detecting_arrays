@@ -20,4 +20,8 @@ class Students
 
     all.reduce(0) { |sum_of_ages, student| sum_of_ages + student[:age] } / all.length
   end
+
+  def string_of_names
+    all.collect { |student| student[:name] }.join(" ")
+  end
 end
