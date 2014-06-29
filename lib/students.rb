@@ -22,6 +22,8 @@ class Students
   end
 
   def string_of_names
-    all.collect { |student| student[:name] }.join(" ")
+    #all.collect { |student| student[:name] }.join(" ")
+
+    p all.reduce("") { |accumulator, student| accumulator + student[:name] + " " }.strip
   end
 end
