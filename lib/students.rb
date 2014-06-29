@@ -1,4 +1,3 @@
-
 class Students
 
 
@@ -13,10 +12,12 @@ class Students
   end
 
   def average_age
-    all_ages = 0
-    all.select do |student|
-      all_ages += student[:age]
-    end
-    all_ages / all.length
+    #all_ages = 0
+    #all.select do |student|
+    #  all_ages += student[:age]
+    #end
+    #all_ages / all.length
+
+    all.reduce(0) { |sum_of_ages, student| sum_of_ages + student[:age] } / all.length
   end
 end
