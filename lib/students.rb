@@ -26,4 +26,14 @@ class Students
 
     p all.reduce("") { |accumulator, student| accumulator + student[:name] + " " }.strip
   end
+
+  def older_than(age)
+    matures = ""
+    all.each do |student|
+      if student[:age] > age
+        matures << student[:name] + (", ")
+      end
+    end
+    p matures.chomp(", ")
+  end
 end
