@@ -36,8 +36,9 @@ describe Students do
     expect(students.older_than(35)).to eq "Peggy, Fred, Lisa"
   end
 
-  it 'can find out if there are any old enough to drink' do
-    pending
+  it 'can find out if there are any students old enough to drink' do
+    students = Students.new
+    expect(students.old_enough(21)).to eq "Peggy, Fred, Sarah, Lisa"
   end
 
   it 'can find a specific student' do

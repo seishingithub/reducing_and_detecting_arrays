@@ -28,6 +28,13 @@ class Students
   end
 
   def older_than(age)
+    #matures = ""
+    #all.each do |student|
+    #  if student[:age] > age
+    #    matures << student[:name] + (", ")
+    #  end
+    #end
+    #p matures.chomp(", ")
     total = all.reject do |students|
       students[:age] <= age
     end
@@ -36,5 +43,9 @@ class Students
       result << student[:name]
     end
     result.join(", ")
+  end
+
+  def old_enough(age)
+    older_than(age)
   end
 end
