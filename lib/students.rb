@@ -24,16 +24,17 @@ class Students
   def string_of_names
     #all.collect { |student| student[:name] }.join(" ")
 
-    p all.reduce("") { |accumulator, student| accumulator + student[:name] + " " }.strip
+    all.reduce("") { |accumulator, student| accumulator + student[:name] + " " }.strip
   end
 
   def older_than(age)
-    matures = ""
-    all.each do |student|
-      if student[:age] > age
-        matures << student[:name] + (", ")
-      end
+    total = all.reject do |students|
+      students[:age] <= age
     end
-    p matures.chomp(", ")
+    result = []
+    total.each do |student|
+      result << student[:name]
+    end
+    result.join(", ")
   end
 end
